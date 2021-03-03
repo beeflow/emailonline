@@ -3,25 +3,24 @@
 Author Rafal Przetakowski <rafal.p@beeflow.co.uk>"""
 import os
 
-from setuptools import find_packages, setup
-
-from emailonline import __version__
+import setuptools
 
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-REQUIREMENTS = [
-    "Django==3.1.7",
-]
-
-setup(
-    name="emailonline",
-    version=__version__,
+setuptools.setup(
+    name="emailonline-beeflow",
+    version="0.0.2",
     author="Rafal Przetakowski",
+    author_email="office@beeflow.co.uk",
     description="Add 'see online' link to any email",
     long_description=open("README.md").read(),
-    packages=find_packages(),
+    long_description_content_type="text/markdown",
+    packages=setuptools.find_packages(),
     url="https://github.com/beeflow/emailonline.git",
-    include_package_data=True,
-    zip_safe=False,
-    install_requires=REQUIREMENTS,
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.8",
 )
